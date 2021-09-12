@@ -1,4 +1,2 @@
 # ip-lookup
-Discord-Webhook IP lookup script 
-
- perfect for Raspberry Pi's etc.
+Discord-Webhook IP lookup script for Raspberry Pi's etc.
