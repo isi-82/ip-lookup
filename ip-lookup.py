@@ -1,12 +1,15 @@
 import socket
-from discordwebhook import Discord
+from dhooks import Webhook, Embed
 
-hook = Discord(url="<webhook_url>")
+hook = Webhook("Wenhook-URL")
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
 print(f"{hostname} IP Addr:{local_ip}")
-hook.post(
-    embeds=[{"title": hostname, "description": f"IP Addr: {local_ip}"}],
-    username="Webhook Name"
+embed = Embed(
+    description=f"IP: ``{local_ip}``",
+    color=0xa9a9a9
 )
+embed.set_author(name=f"{hostname}")
+
+hook.send(embed=embed)
